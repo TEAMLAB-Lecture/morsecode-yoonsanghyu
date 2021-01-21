@@ -140,14 +140,14 @@ class TestMorseCode(unittest.TestCase):
         morse_code_dict = self.get_morse_code_dict()
         return morse_code_dict[english_character.upper()]
 
-    def decoding_sentence(self, morse_sentence):
-        result = []
-        for character in morse_sentence.split(" "):
-            if character is not "":
-                result.append(self.decoding_character(character))
-            else:
-                result.append("-")
-        return " ".join(result).replace(" ", "").replace("-", " ")
+    # def decoding_sentence(self, morse_sentence):
+    #     result = []
+    #     for character in morse_sentence.split(" "):
+    #         if character is not "":
+    #             result.append(self.decoding_character(character))
+    #         else:
+    #             result.append("-")
+    #     return " ".join(result).replace(" ", "").replace("-", " ")
 
     def encoding_sentence(self, english_sentence):
         english_sentence = self.get_cleaned_english_sentence(english_sentence)
@@ -166,3 +166,7 @@ class TestMorseCode(unittest.TestCase):
             "K": "-.-", "X": "-..-", "J": ".---", "W": ".--", "L": ".-..", "Y": "-.--", "M": "--", "Z": "--.."
         }
         return morse_code
+if __name__ == "__main__":
+    a = TestMorseCode()    
+    a.test_encoding_sentence()
+    #unittest.main()
